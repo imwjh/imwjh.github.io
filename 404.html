@@ -1,194 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 — Page Not Found | seegood</title>
-  <meta name="description" content="Sorry, the page you are looking for does not exist.">
-  <meta name="robots" content="noindex, follow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://imwjh.github.io/404.html">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .error-page {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0 3vw;
-      overflow: hidden;
-    }
-    .error-bg-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: var(--font-display);
-      font-size: clamp(10rem, 35vw, 30rem);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 0.85;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(244,244,244,0.06);
-      text-stroke: 1px rgba(244,244,244,0.06);
-      white-space: nowrap;
-      z-index: 0;
-      pointer-events: none;
-      user-select: none;
-    }
-    .error-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      max-width: 600px;
-    }
-    .error-code {
-      font-family: var(--font-display);
-      font-size: clamp(4rem, 12vw, 10rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      margin-bottom: 1.5rem;
-      color: var(--text);
-    }
-    .error-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.25rem, 3vw, 2rem);
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      margin-bottom: 1rem;
-      color: var(--text);
-    }
-    .error-desc {
-      font-family: var(--font-body);
-      font-size: clamp(0.9375rem, 1.2vw, 1.125rem);
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.85;
-      margin-bottom: 3rem;
-    }
-    .error-back {
-      display: inline-block;
-      font-family: var(--font-display);
-      font-size: 0.9375rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      padding: 1rem 2.5rem;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      transition: all 0.4s var(--ease-out-quart);
-    }
-    .error-back:hover {
-      background: var(--text);
-      color: var(--bg);
-      border-color: var(--text);
-    }
-    .error-footer {
-      position: absolute;
-      bottom: 3rem;
-      left: 3vw;
-      right: 3vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-      z-index: 1;
-    }
-    .error-footer-links {
-      display: flex;
-      gap: 2rem;
-    }
-    .error-footer-links a {
-      transition: color 0.3s;
-    }
-    .error-footer-links a:hover {
-      color: var(--text);
-    }
-    @media (max-width: 900px) {
-      .error-page {
-        padding: 0 5vw;
-      }
-      .error-footer {
-        left: 5vw;
-        right: 5vw;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: flex-start;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#F9F7F4" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#F9F7F4" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="light">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="msapplication-TileColor" content="#F9F7F4">
+    <title>404</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+		/* 禁用所有元素的触摸高亮反馈 */
+       * {
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+      
+        /* * 设计风格：日式极简 (Japanese Minimalism)
+         * 404 页面核心：空灵、指引、归静
+         */
+
+        @font-face {
+            font-family: 'JapaneseMinimal';
+            src: local('Noto Serif CJK SC Light'), local('Source Han Serif SC Light'), local('Songti SC'), serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 宣纸晕染动画 */
+        @keyframes washiFadeIn {
+            0% {
+                opacity: 0;
+                filter: blur(8px);
+                transform: scale(0.99);
+            }
+            100% {
+                opacity: 1;
+                filter: blur(0);
+                transform: scale(1);
+            }
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #F9F7F4;
+        }
+
+        body {
+            color: #2A2A2A;
+            font-family: 'JapaneseMinimal', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            animation: washiFadeIn 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            overflow: hidden;
+        }
+
+        /* 404 数字背景 - 极其浅淡，若隐若现 */
+        .error-code {
+            position: absolute;
+            font-size: 15rem;
+            color: #EBE9E6;
+            z-index: -1;
+            letter-spacing: -0.05em;
+            user-select: none;
+        }
+
+        .content-box {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .status-text {
+            font-size: 1.1rem;
+            letter-spacing: 0.4em;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            color: #9A8B78; /* 茶褐色点缀 */
+        }
+
+        .description {
+            font-size: 0.9rem;
+            color: #666;
+            letter-spacing: 0.2em;
+            margin-bottom: 4rem;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #E0DDD9;
+            width: 40px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* 返回链接 */
+        .back-home {
+            text-decoration: none;
+            color: #2A2A2A;
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            border: 1px solid #2A2A2A;
+            padding: 12px 30px;
+            transition: all 0.4s ease;
+            display: inline-block;
+        }
+
+        .back-home:hover {
+            color: #F9F7F4;
+            background-color: #2A2A2A; /* 极简黑白反转交互 */
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10vh;
+            text-align: center;
+            width: 100%;
+        }
+
+        .copyright {
+            font-size: 0.65rem;
+            color: #B0B0B0;
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 768px) {
+            .error-code { font-size: 8rem; }
+            .status-text { font-size: 1rem; }
+        }
+    </style>
+    <script>
+        // 复刻 index (27).html 的核心技术：动态同步主题色
+        function setThemeColor(color) {
+            let meta = document.querySelector('meta[name="theme-color"]');
+            if (!meta) {
+                meta = document.createElement('meta');
+                meta.name = "theme-color";
+                document.getElementsByTagName('head')[0].appendChild(meta);
+            }
+            meta.setAttribute('content', color);
+        }
+
+        function syncTheme() {
+            const color = window.getComputedStyle(document.body).backgroundColor;
+            if (color.startsWith('rgb')) {
+                const rgb = color.match(/\d+/g);
+                const hex = "#" + ((1 << 24) + (parseInt(rgb[0]) << 16) + (parseInt(rgb[1]) << 8) + parseInt(rgb[2])).toString(16).slice(1);
+                setThemeColor(hex);
+            } else {
+                setThemeColor(color || "#F9F7F4");
+            }
+        }
+
+        syncTheme();
+        window.addEventListener('scroll', syncTheme, { passive: true });
+        document.body.addEventListener('animationend', syncTheme);
+        setTimeout(syncTheme, 1500); // 404 页面的动画时间稍长
+    </script>
 </head>
 <body>
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-trail" id="cursorTrail"></div>
 
-  <header class="site-header">
-    <a href="/" class="logo" data-cursor="hover">seegood</a>
-    <nav class="main-nav">
-      <a href="/#works" data-cursor="hover">Works</a>
-      <a href="/#about" data-cursor="hover">About</a>
-      <a href="/#contact" data-cursor="hover">Contact</a>
-    </nav>
-    <a href="https://explore.seegood.top" class="lang-switch" data-cursor="hover">中</a>
-  </header>
+    <div class="error-code">404</div>
 
-  <main class="error-page">
-    <div class="error-bg-text" aria-hidden="true">404</div>
-    <div class="error-content">
-      <div class="error-code">404</div>
-      <h1 class="error-title">Page Not Found</h1>
-      <p class="error-desc">Sorry, the page you are looking for does not exist or has been removed.</p>
-      <a href="/" class="error-back" data-cursor="hover">Back to Home</a>
+    <div class="content-box">
+        <h1 class="status-text">此路不通</h1>
+        <p class="description">你所找寻的风景，或许已消失在远山之中。</p>
+        
+        <div class="divider"></div>
+
+        <a href="index.html" class="back-home">返回首页 / BACK HOME</a>
     </div>
-    <div class="error-footer">
-      <span>© 2025-2026 seegood</span>
-      <div class="error-footer-links">
-        <a href="https://github.com/imwjh" data-cursor="hover" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.instagram.com/wuuu__mnothing" data-cursor="hover" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://b23.tv/bsoC3Xn" data-cursor="hover" target="_blank" rel="noopener">Bilibili</a>
-        <a href="https://imwjh.com/" data-cursor="hover" target="_blank" rel="noopener">Blog</a>
-      </div>
-    </div>
-  </main>
 
-  <script>
-    // Custom cursor
-    const cursor = document.getElementById('cursor');
-    const cursorTrail = document.getElementById('cursorTrail');
-    let mx = 0, my = 0, tx = 0, ty = 0, trailX = 0, trailY = 0;
+    <footer>
+        <p class="copyright">© 2026 SEEGooD ALL RIGHTS RESERVED</p>
+    </footer>
 
-    document.addEventListener('mousemove', (e) => {
-      tx = e.clientX;
-      ty = e.clientY;
-    });
-
-    function animate() {
-      mx += (tx - mx) * 0.2;
-      my += (ty - my) * 0.2;
-      trailX += (tx - trailX) * 0.08;
-      trailY += (ty - trailY) * 0.08;
-      cursor.style.transform = `translate(${mx - 6}px, ${my - 6}px)`;
-      cursorTrail.style.transform = `translate(${trailX - 20}px, ${trailY - 20}px)`;
-      requestAnimationFrame(animate);
-    }
-    animate();
-
-    document.querySelectorAll('[data-cursor="hover"]').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover');
-        cursorTrail.classList.add('hover');
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover');
-        cursorTrail.classList.remove('hover');
-      });
-    });
-  </script>
 </body>
 </html>
