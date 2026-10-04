@@ -24,6 +24,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- 英文手写体 Pangolin（Google Fonts CDN） -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap">
+
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://seegood.top/">
@@ -99,6 +102,15 @@
             /* 优化字体加载，防止文本闪烁 */
         }
 
+        /* 中文字体：本地 AaWanWan 子集（仅含本页所需汉字，已 woff2 压缩）
+           字体 AaWanWan（Aa弯弯）© 2015 北京奇思众和科技有限公司（Beijing QiSiZhonghe Technology Co.Ltd.）
+           基于 Apache License 2.0 授权使用（http://www.apache.org/licenses/LICENSE-2.0.html），已进行子集化处理 */
+        @font-face {
+            font-family: 'AaWanWan';
+            src: url('font/AaWanWan.subset.woff2') format('woff2');
+            font-display: swap;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -137,7 +149,7 @@
         body {
             background-color: #F0EEE6;
             color: #2A2A2A;
-            font-family: 'JapaneseMinimal', serif;
+            font-family: 'Pangolin', 'AaWanWan', 'JapaneseMinimal', serif;
             line-height: 1.6;
             display: flex;
             flex-direction: column;
@@ -219,6 +231,15 @@
             color: #9A8B78;
         }
 
+        /* 中文（AaWanWan 手写体）单独增大一号。
+           AaWanWan 仅单一字重，font-weight 无中间档；
+           用极细描边模拟"轻加粗"，居于默认与合成粗体之间 */
+        .link-item a .zh {
+            font-size: 1.15em;
+            -webkit-text-stroke: 0.3px currentColor;
+            text-stroke: 0.3px currentColor;
+        }
+
         footer {
             padding-bottom: 10vh;
             text-align: center;
@@ -228,6 +249,8 @@
             font-size: 0.65rem;
             color: #B0B0B0;
             letter-spacing: 0.1em;
+            /* 按需求保留原字体，不受 Pangolin 影响 */
+            font-family: 'JapaneseMinimal', serif;
         }
 
         @media (max-width: 768px) {
@@ -269,7 +292,7 @@
                         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                             <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
                         </svg>
-                        <span>个人博客 / BLOG</span>
+                        <span><span class="zh">个人博客</span> / BLOG</span>
                     </a>
                 </li>
             </ul>
@@ -287,7 +310,7 @@
                             <rect x="2" y="8" width="20" height="12"></rect>
                             <path d="M7 2l3 3M17 2l-3 3"></path>
                         </svg>
-                        <span>哔哩哔哩 / BILIBILI</span>
+                        <span><span class="zh">哔哩哔哩</span> / BILIBILI</span>
                     </a>
                 </li>
                 <li class="link-item">
@@ -297,7 +320,7 @@
                             <rect x="2" y="2" width="20" height="20"></rect>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"></path>
                         </svg>
-                        <span>照片墙 / MOMENTS</span>
+                        <span><span class="zh">照片墙</span> / MOMENTS</span>
                     </a>
                 </li>
             </ul>
@@ -316,7 +339,7 @@
                                 d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
                             </path>
                         </svg>
-                        <span>代码仓库 / GITHUB</span>
+                        <span><span class="zh">代码仓库</span> / GITHUB</span>
                     </a>
                 </li>
                 <li class="link-item">
@@ -326,7 +349,7 @@
                             <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
                             </path>
                         </svg>
-                        <span>作品集 / PORTFOLIO</span>
+                        <span><span class="zh">作品集</span> / PORTFOLIO</span>
                     </a>
                 </li>
             </ul>
